@@ -107,8 +107,6 @@ if($email->send()){
 - [Kevin S. Siqueira](https://github.com/kevind3v) (Developer of this library)
 - [PHPMailer](https://packagist.org/packages/phpmailer/phpmailer) (Lib to send E-mail)
 
-## License
-
-MIT
+### License
 
 The MIT License (MIT). Please see [License File](https://github.com/kevind3v/brmailer/blob/main/LICENSE) for more information.
