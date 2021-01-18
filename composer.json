@@ -10,9 +10,6 @@
       "role": "Developer"
     }
   ],
-  "config": {
-    "vendor-dir": "vendor"
-  },
   "autoload": {
     "psr-4": {
       "BrBunny\\BrMailer\\": "src/"
