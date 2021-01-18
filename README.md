@@ -1,4 +1,10 @@
-# BRMAILER
+# BRMAILER @BrBunny
+
+[![Maintainer](https://img.shields.io/badge/maintainer-@kevind3v-blue.svg?style=flat-square)](https://github.com/kevind3v)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/brbunny/brmailer.svg?style=flat-square)](https://packagist.org/packages/brbunny/brmailer)
+[![Latest Version](https://img.shields.io/github/release/kevind3v/brmailer.svg?style=flat-square)](https://github.com/kevind3v/brmailer/releases/)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/kevind3v/brmailer/blob/main/LICENSE)
+[![Total Downloads](https://img.shields.io/packagist/dt/brbunny/brmailer.svg?style=flat-square)](https://packagist.org/packages/brbunny/brmailer)
 
 BrMailer is a component for handling emails using PHPMAILER.
 
@@ -22,24 +28,24 @@ For more details on how to use BrMailer, see the example folder with details in 
 
 ##### Configuration
 
-_To begin using BrMailer we need to configure the email data. To learn more visit [Component PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)_
+_To begin using BrMailer we need to configure the email data. Put constant BRMAILER in your project's configuration file and change the values according to your preference. To learn more visit [Component PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)_
 
-Para começar a usar o BrMailer precisamos configurar os dados do e-mail. Para saber mais visite [Componente PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)
+Para começar a usar o BrMailer precisamos configurar os dados do e-mail. Coloque constante BRMAILER no arquivo de configuração do seu projeto e mude os valores de acordo com sua preferência. Para saber mais visite [Componente PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)
 
 ```php
 <?php
 
 define("BRMAILER", [
-    "host" => "smtp.example.com",
+    "host" => "mail.host.com",
     "port" => "587",
     "user" => "user@example.com",
     "passwd" => "secret",
     "from" => [
-       "name" => "BrBunny",
+       "name" => "From Name",
        "address" => "from@example.com",
     ],
     "reply" => {
-       "name" => "BrBunny",
+       "name" => "Reply Name",
        "address" => "info@example.com",
     }
     "options" => [
@@ -47,7 +53,7 @@ define("BRMAILER", [
        "smtp_debug" => 0, // Enable verbose debug output
        "is_html" => true, // Set email format to HTML
        "auth" => true, // Enable SMTP authentication
-       "secure" => "tls", // Enable TLS encryption
+       "secure" => "tls or ssl", // Enable TLS encryption
        "charset" => "utf-8" // Set email charset
     ]
 ]);
@@ -98,7 +104,7 @@ if($email->send()){
    //Message success
 }else{
    //Get message error
-   $email->fail()->getMessage();
+   echo $email->fail()->getMessage();
 }
 ```
 
