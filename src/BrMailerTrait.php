@@ -2,7 +2,6 @@
 
 namespace BrBunny\BrMailer;
 
-use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 /**
@@ -69,7 +68,7 @@ trait BrMailerTrait
             if (
                 count(get_object_vars($this->data)) == 0
             ) {
-                throw new Exception("Verifique os dados");
+                throw new Exception("Error!! Empty data");
             }
 
             $this->mail->Subject = (string)$this->data->subject;
