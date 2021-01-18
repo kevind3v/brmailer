@@ -102,13 +102,13 @@ if($email->send()){
 }
 ```
 
-### Developers
+### Credits
 
-- [Kevin Siqueira] - Developer of this library
-- [PHPMailer] - Lib to send E-mail
+- [Kevin S. Siqueira](https://github.com/kevind3v) (Developer of this library)
+- [PHPMailer](https://packagist.org/packages/phpmailer/phpmailer) (Lib to send E-mail)
 
 ## License
 
 MIT
 
-The MIT License (MIT). Please see [License File]() for more information.
+The MIT License (MIT). Please see [License File](https://github.com/kevind3v/brmailer/blob/main/LICENSE) for more information.
