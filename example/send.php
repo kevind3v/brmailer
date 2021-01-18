@@ -7,13 +7,13 @@ use BrBunny\BrMailer\BrMailer;
 $email = new BrMailer();
 
 $email->bootstrap(
-    "Subject E-mail",
-    "<p>Hello <b>Word</b>!</p>",
+    "Here is the subject",
+    "This is the HTML message body <b>in bold!</b>",
 );
 
 //Destination address
-$email->addAddress("you@example.com", "You Name");
-$email->addAddress("you@example.com");
+$email->addAddress("joe@example.net", "Joe User");
+$email->addAddress("jhow@example.com");
 
 //Add Attachment in E-mail
 $email->attach("./file.pdf", "Foto Email");

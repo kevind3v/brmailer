@@ -73,7 +73,7 @@ $email = new BrMailer();
 $email->bootstrap(
     "Here is the subject",
     "This is the HTML message body <b>in bold!</b>",
-)
+);
 ```
 
 ##### AddAddress
@@ -81,8 +81,9 @@ $email->bootstrap(
 ```php
 <?php
 
+// Destination address
 $email->addAddress("joe@example.net", "Joe User");
-$email->addAddress("jhow@example.com") // Name is optional
+$email->addAddress("jhow@example.com"); // Name is optional
 ```
 
 ##### Attachment
@@ -90,8 +91,9 @@ $email->addAddress("jhow@example.com") // Name is optional
 ```php
 <?php
 
+// Add Attachment in E-mail
 $email->attach("/tmp/image.jpg", "Image");
-$email->attach("/tmp/file.pdf") // Name is optional
+$email->attach("/tmp/file.pdf"); // Name is optional
 ```
 
 ##### Send E-mail
@@ -101,9 +103,10 @@ $email->attach("/tmp/file.pdf") // Name is optional
 
 // string $from, string $fromName, string $replyTo, string $replyToName
 if($email->send()){
-   //Message success
+   // Message success
+   echo "Success Send";
 }else{
-   //Get message error
+   // Get message error
    echo $email->fail()->getMessage();
 }
 ```
