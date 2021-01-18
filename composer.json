@@ -1,0 +1,29 @@
+{
+  "name": "brbunny/brmailer",
+  "description": "BrMailer is a component for handling email using PHPMAILER",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Santos",
+      "email": "kevinsiqueira.dev@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "BrBunny\\BrMailer\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.2",
+    "ext-pdo": "*",
+    "phpmailer/phpmailer": "^6.2"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*"
+  }
+}
