@@ -54,10 +54,21 @@ trait BrMailerTrait
         return $this;
     }
 
+    /**
+     * @param string $recipient
+     * @param string $recipientName
+     * @return void
+     */
     public function addCC(string $recipient, string $recipientName = null)
     {
         $this->data->cc[$recipient] = $recipientName;
     }
+
+    /**
+     * @param string $recipient
+     * @param string $recipientName
+     * @return void
+     */
     public function addBCC(string $recipient, string $recipientName = null)
     {
         $this->data->bcc[$recipient] = $recipientName;

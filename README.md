@@ -88,12 +88,37 @@ _If you do not enter email as a parameter in the bootstrap function, you must us
 
 Se você não inserir email como um parâmetro na função bootstrap, você deve usar a função addAddress.
 
+_If you use the AddAddress or addCC function, recipients will know who of everyone who received the same message._
+
+Caso use função AddAddress ou addCC, os destinatários terão conhecimento de todos que receberam a mesma mensagem.
+
 ```php
 <?php
 
-// Destination address
 $email->addAddress("joe@example.net", "Joe User");
 $email->addAddress("jhow@example.com"); // Name is optional
+```
+
+##### AddCC
+
+```php
+<?php
+
+$email->addCC("joe@example.net", "Joe User");
+$email->addCC("jhow@example.com"); // Name is optional
+```
+
+##### AddBCC
+
+_The addBCC function sends the email to more than one person, without one knowing that the other is receiving the same message._
+
+A função addBCC envia o e-mail para mais de uma pessoa, sem que uma saiba que a outra está recebendo a mesma mensagem.
+
+```php
+<?php
+
+$email->addBCC("joe@example.net", "Joe User");
+$email->addBCC("jhow@example.com"); // Name is optional
 ```
 
 ##### Attachment
