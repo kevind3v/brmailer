@@ -37,7 +37,7 @@ trait BrMailerTrait
      * @param string $fileName
      * @return BrMailer
      */
-    public function attach(string $path, string $fileName): BrMailer
+    public function attach(string $path, string $fileName = null): BrMailer
     {
         $this->data->attach[$path] = $fileName;
         return $this;
@@ -52,6 +52,15 @@ trait BrMailerTrait
     {
         $this->data->address[$recipient] = $recipientName;
         return $this;
+    }
+
+    public function addCC(string $recipient, string $recipientName = null)
+    {
+        $this->data->cc[$recipient] = $recipientName;
+    }
+    public function addBCC(string $recipient, string $recipientName = null)
+    {
+        $this->data->bcc[$recipient] = $recipientName;
     }
 
     /**
@@ -80,10 +89,19 @@ trait BrMailerTrait
 
             if (!empty($this->data->address)) {
                 foreach ($this->data->address as $address => $name) {
-                    $this->mail->Address($address, $name);
+                    $this->mail->addAddress($address, $name);
                 }
             }
-
+            if (!empty($this->data->cc)) {
+                foreach ($this->data->cc as $cc => $name) {
+                    $this->mail->addCC($cc, $name);
+                }
+            }
+            if (!empty($this->data->bcc)) {
+                foreach ($this->data->bcc as $bcc => $name) {
+                    $this->mail->addBCC($bcc, $name);
+                }
+            }
             if (!empty($this->data->attach)) {
                 foreach ($this->data->attach as $path => $name) {
                     $this->mail->addAttachment($path, $name);
