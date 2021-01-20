@@ -97,9 +97,9 @@ $email->addAddress("jhow@example.com"); // Name is optional
 
 ##### AddCC
 
-_If you use the AddAddress or addCC function to add more than one recipient, they will know who received the message._
+_If you use the addAddress or addCC function to add more than one recipient, they will know who received the message._
 
-Caso use função AddAddress ou addCC para adicionar mais de um destinatário, os mesmos terão conhecimento de quem recebeu a mensagem.
+Caso use função addAddress ou addCC para adicionar mais de um destinatário, os mesmos terão conhecimento de quem recebeu a mensagem.
 
 ```php
 <?php
