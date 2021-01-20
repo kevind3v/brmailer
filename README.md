@@ -61,6 +61,10 @@ define("BRMAILER", [
 
 ##### Bootstrap
 
+_To send email to just one recipient, add the destination email as a parameter in the bootstrap function. However, you can add it with the addAddress function or both together._
+
+Para enviar e-mail para apenas um destinatário, adicione o e-mail de destino como parâmetro da função bootstrap. No entanto, você pode adicioná-lo com a função addAddress ou os ambos juntos.
+
 ```php
 <?php
 require __DIR__ . '/vendor/autoload.php';
@@ -73,10 +77,16 @@ $email = new BrMailer();
 $email->bootstrap(
     "Here is the subject",
     "This is the HTML message body <b>in bold!</b>",
+    "van@example.com", // E-mail is Optional
+    "Van User" // Name is Optional
 );
 ```
 
 ##### AddAddress
+
+_If you do not enter email as a parameter in the bootstrap function, you must use the addAddress function._
+
+Se você não inserir email como um parâmetro na função bootstrap, você deve usar a função addAddress.
 
 ```php
 <?php

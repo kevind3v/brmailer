@@ -21,13 +21,14 @@ trait BrMailerTrait
     public function bootstrap(
         string $subject,
         string $body,
-        string $recipientName = null,
-        string $recipient = null
+        string $recipient = null,
+        string $recipientName = null
     ): BrMailer {
         $this->data->subject = $subject;
         $this->data->body = $body;
-        $this->data->recipient = $recipient;
-        $this->data->recipientName = $recipientName;
+        if ($recipient) {
+            $this->addAddress($recipient, $recipientName);
+        }
         return $this;
     }
 
@@ -78,11 +79,8 @@ trait BrMailerTrait
             $this->mail->setFrom($from, $fromName);
 
             if (!empty($this->data->address)) {
-                if ($this->data->recipient) {
-                    $this->mail->addAddress($this->data->recipient, $this->data->recipientName);
-                }
                 foreach ($this->data->address as $address => $name) {
-                    $this->mail->addAddress($address, $name);
+                    $this->mail->Address($address, $name);
                 }
             }
 
