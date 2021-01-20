@@ -88,10 +88,6 @@ _If you do not enter email as a parameter in the bootstrap function, you must us
 
 Se você não inserir email como um parâmetro na função bootstrap, você deve usar a função addAddress.
 
-_If you use the AddAddress or addCC function, recipients will know who of everyone who received the same message._
-
-Caso use função AddAddress ou addCC, os destinatários terão conhecimento de todos que receberam a mesma mensagem.
-
 ```php
 <?php
 
@@ -100,6 +96,10 @@ $email->addAddress("jhow@example.com"); // Name is optional
 ```
 
 ##### AddCC
+
+_If you use the AddAddress or addCC function to add more than one recipient, they will know who received the message._
+
+Caso use função AddAddress ou addCC para adicionar mais de um destinatário, os mesmos terão conhecimento de quem recebeu a mensagem.
 
 ```php
 <?php
