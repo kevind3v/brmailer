@@ -84,9 +84,9 @@ $email->bootstrap(
 
 ##### Template
 
-_Now you can assemble your html email template using BrPlates, create the template using the `template ()` method. For more details access the sample folder and see how it works or visit [BrPlates] (https://packagist.org/packages/brbunny/brplates)._
+_Now you can assemble your html email template using BrPlates, create the template using the `template ()` method. For more details access the sample folder and see how it works or visit [BrPlates](https://packagist.org/packages/brbunny/brplates)._
 
-Agora você pode montar seu template de e-mail html usando BrPlates, basta criar o template usando o método `template ()`. Para mais detalhes acesse a pasta de exemplo e veja como funciona ou visite [BrPlates] (https://packagist.org/packages/brbunny/brplates).
+Agora você pode montar seu template de e-mail html usando BrPlates, basta criar o template usando o método `template ()`. Para mais detalhes acesse a pasta de exemplo e veja como funciona ou visite [BrPlates](https://packagist.org/packages/brbunny/brplates).
 
 ```php
 <?php
