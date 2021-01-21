@@ -28,9 +28,9 @@ For more details on how to use BrMailer, see the example folder with details in 
 
 ##### Configuration
 
-_To begin using BrMailer we need to configure the email data. Put constant BRMAILER in your project's configuration file and change the values according to your preference. To learn more visit [Component PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)_
+_To begin using BrMailer we need to configure the email data. Put constant `BRMAILER` in your project's configuration file and change the values according to your preference. To learn more visit [Component PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)_
 
-Para começar a usar o BrMailer precisamos configurar os dados do e-mail. Coloque constante BRMAILER no arquivo de configuração do seu projeto e mude os valores de acordo com sua preferência. Para saber mais visite [Componente PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)
+Para começar a usar o BrMailer precisamos configurar os dados do e-mail. Coloque constante `BRMAILER` no arquivo de configuração do seu projeto e mude os valores de acordo com sua preferência. Para saber mais visite [Componente PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)
 
 ```php
 <?php
@@ -61,9 +61,9 @@ define("BRMAILER", [
 
 ##### Bootstrap
 
-_To send email to just one recipient, add the destination email as a parameter in the bootstrap function. However, you can add it with the addAddress function or both together._
+_To send email to just one recipient, add the destination email as a parameter in the `bootstrap()` function. However, you can add it with the `addAddress()` function or both together._
 
-Para enviar e-mail para apenas um destinatário, adicione o e-mail de destino como parâmetro da função bootstrap. No entanto, você pode adicioná-lo com a função addAddress ou os ambos juntos.
+Para enviar e-mail para apenas um destinatário, adicione o e-mail de destino como parâmetro da função `bootstrap()`. No entanto, você pode adicioná-lo com a função `addAddress()` ou os ambos juntos.
 
 ```php
 <?php
@@ -84,9 +84,9 @@ $email->bootstrap(
 
 ##### Template
 
-_Now you can assemble your html email template using BrPlates, create the template using the `template ()` method. For more details access the sample folder and see how it works or visit [BrPlates](https://packagist.org/packages/brbunny/brplates)._
+_Now you can assemble your html email template using BrPlates, create the template using the `template()` method. For more details access the sample folder and see how it works or visit [BrPlates](https://packagist.org/packages/brbunny/brplates)._
 
-Agora você pode montar seu template de e-mail html usando BrPlates, basta criar o template usando o método `template ()`. Para mais detalhes acesse a pasta de exemplo e veja como funciona ou visite [BrPlates](https://packagist.org/packages/brbunny/brplates).
+Agora você pode montar seu template de e-mail html usando BrPlates, basta criar o template usando o método `template()`. Para mais detalhes acesse a pasta de exemplo e veja como funciona ou visite [BrPlates](https://packagist.org/packages/brbunny/brplates).
 
 ```php
 <?php
@@ -103,9 +103,9 @@ $email->bootstrap(
 
 ##### AddAddress
 
-_If you do not enter email as a parameter in the bootstrap function, you must use the addAddress function._
+_If you do not enter email as a parameter in the bootstrap function, you must use the `addAddress()` function._
 
-Se você não inserir email como um parâmetro na função bootstrap, você deve usar a função addAddress.
+Se você não inserir email como um parâmetro na função bootstrap, você deve usar a função `addAddress()`.
 
 ```php
 <?php
@@ -116,9 +116,9 @@ $email->addAddress("jhow@example.com"); // Name is optional
 
 ##### AddCC
 
-_If you use the addAddress or addCC function to add more than one recipient, they will know who received the message._
+_If you use the `addAddress()` or `addCC()` function to add more than one recipient, they will know who received the message._
 
-Caso use função addAddress ou addCC para adicionar mais de um destinatário, os mesmos terão conhecimento de quem recebeu a mensagem.
+Caso use função `addAddress()` ou `addCC()` para adicionar mais de um destinatário, os mesmos terão conhecimento de quem recebeu a mensagem.
 
 ```php
 <?php
@@ -129,9 +129,9 @@ $email->addCC("jhow@example.com"); // Name is optional
 
 ##### AddBCC
 
-_The addBCC function sends the email to more than one person, without one knowing that the other is receiving the same message._
+_The `addBCC()` function sends the email to more than one person, without one knowing that the other is receiving the same message._
 
-A função addBCC envia o e-mail para mais de uma pessoa, sem que uma saiba que a outra está recebendo a mesma mensagem.
+A função `addBCC()` envia o e-mail para mais de uma pessoa, sem que uma saiba que a outra está recebendo a mesma mensagem.
 
 ```php
 <?php
