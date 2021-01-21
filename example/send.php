@@ -7,9 +7,23 @@ use BrBunny\BrMailer\BrMailer;
 
 $email = new BrMailer();
 
+//Message without HTML
 $email->bootstrap(
     "Here is the subject",
-    "This is the HTML message body <b>in bold!</b>",
+    "This is the message body",
+    "van@example.com", //is Optional
+    "Van User" //is Optional
+);
+
+// Message with HTML
+// Template HTML message [https://packagist.org/packages/brbunny/brplates]
+$template = $email->template("./theme")->catch("_theme", [
+    "title" => "E-mail",
+    "company" => "BrBunny"
+]);
+$email->bootstrap(
+    "Here is the subject",
+    $template,
     "van@example.com", //is Optional
     "Van User" //is Optional
 );
@@ -21,7 +35,6 @@ $email->addBCC("gui@example.net", "Gui User"); //Name is Optional
 
 //Add Attachment in E-mail
 $email->attach("./file.pdf", "Foto Email");
-
 
 if ($email->send()) {
     echo "Success Send";

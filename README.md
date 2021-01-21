@@ -76,9 +76,28 @@ $email = new BrMailer();
 // (string Subject, string Body, string RecipientAddress, string RecipientName)
 $email->bootstrap(
     "Here is the subject",
-    "This is the HTML message body <b>in bold!</b>",
+    "This is the message body",
     "van@example.com", // E-mail is Optional
     "Van User" // Name is Optional
+);
+```
+
+##### Template
+
+_Now you can assemble your html email template using BrPlates, create the template using the `template ()` method. For more details access the sample folder and see how it works or visit [BrPlates] (https://packagist.org/packages/brbunny/brplates)._
+
+Agora você pode montar seu template de e-mail html usando BrPlates, basta criar o template usando o método `template ()`. Para mais detalhes acesse a pasta de exemplo e veja como funciona ou visite [BrPlates] (https://packagist.org/packages/brbunny/brplates).
+
+```php
+<?php
+
+$template = $email->template("./theme", "php")->catch("_theme", [
+    "title" => "E-mail",
+    "company" => "BrBunny"
+]);
+$email->bootstrap(
+    "Here is the subject",
+    $template
 );
 ```
 

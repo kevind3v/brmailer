@@ -2,6 +2,7 @@
 
 namespace BrBunny\BrMailer;
 
+use BrBunny\BrPlates\BrPlates;
 use PHPMailer\PHPMailer\Exception;
 
 /**
@@ -30,6 +31,13 @@ trait BrMailerTrait
             $this->addAddress($recipient, $recipientName);
         }
         return $this;
+    }
+
+    public function template(
+        string $path,
+        string $ext = "php"
+    ) {
+        return new BrPlates($path, $ext);
     }
 
     /**
