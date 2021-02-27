@@ -2,6 +2,7 @@
 
 namespace BrBunny\BrMailer;
 
+use BrBunny\BrPlates\BrPlates;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -20,7 +21,8 @@ class BrMailer
     private $mail;
     /** @var Exception */
     private $fail;
-
+    /** @var BrPlates */
+    private $template;
 
     public function __construct()
     {
@@ -51,6 +53,11 @@ class BrMailer
     public function mail(): PHPMailer
     {
         return $this->mail;
+    }
+
+    public function getTemplate(): BrPlates
+    {
+        return $this->template;
     }
 
     public function data()

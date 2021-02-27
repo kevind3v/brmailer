@@ -17,10 +17,11 @@ $email->bootstrap(
 
 // Message with HTML
 // Template HTML message [https://packagist.org/packages/brbunny/brplates]
-$template = $email->template("./theme")->catch("_theme", [
+$template = $email->template("./theme")->renderTemplate("_theme", [
     "title" => "E-mail",
     "company" => "BrBunny"
 ]);
+
 $email->bootstrap(
     "Here is the subject",
     $template,

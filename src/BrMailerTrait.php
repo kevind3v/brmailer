@@ -33,11 +33,26 @@ trait BrMailerTrait
         return $this;
     }
 
+    /**
+     * @param string $path
+     * @param string $ext
+     */
     public function template(
         string $path,
         string $ext = "php"
-    ) {
-        return new BrPlates($path, $ext);
+    ): BrMailer {
+        $this->template = new BrPlates($path, $ext);
+        return $this;
+    }
+
+    /**
+     * @param string $theme
+     * @param array|null $data
+     * @return BrPlates
+     */
+    public function renderTemplate(string $theme, ?array $data = []): string
+    {
+        return $this->template->render($theme, $data);
     }
 
     /**

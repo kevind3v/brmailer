@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08e2c344752147bb8ac67dfc06862bb4",
+    "content-hash": "9215fc0ed7c5986969d8dda140e8feab",
     "packages": [
         {
             "name": "brbunny/brplates",
-            "version": "v1.0.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kevind3v/brplates.git",
-                "reference": "67514fc3d237422ca9f09562bb6ef49e3feabbde"
+                "reference": "cd9d01c039a6f0e46aeb417ea1faa6c9683be5c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevind3v/brplates/zipball/67514fc3d237422ca9f09562bb6ef49e3feabbde",
-                "reference": "67514fc3d237422ca9f09562bb6ef49e3feabbde",
+                "url": "https://api.github.com/repos/kevind3v/brplates/zipball/cd9d01c039a6f0e46aeb417ea1faa6c9683be5c4",
+                "reference": "cd9d01c039a6f0e46aeb417ea1faa6c9683be5c4",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             "description": "BrPlates is a component for handling view layer using Plates",
             "support": {
                 "issues": "https://github.com/kevind3v/brplates/issues",
-                "source": "https://github.com/kevind3v/brplates/tree/v1.0.0"
+                "source": "https://github.com/kevind3v/brplates/tree/v1.1.1"
             },
-            "time": "2021-01-21T00:51:53+00:00"
+            "time": "2021-02-19T22:51:18+00:00"
         },
         {
             "name": "league/plates",
@@ -118,16 +118,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.2.0",
+            "version": "v6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "e38888a75c070304ca5514197d4847a59a5c853f"
+                "reference": "4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e38888a75c070304ca5514197d4847a59a5c853f",
-                "reference": "e38888a75c070304ca5514197d4847a59a5c853f",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb",
+                "reference": "4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb",
                 "shasum": ""
             },
             "require": {
@@ -182,7 +182,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.2.0"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.3.0"
             },
             "funding": [
                 {
@@ -190,7 +190,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-25T15:24:57+00:00"
+            "time": "2021-02-19T15:28:08+00:00"
         }
     ],
     "packages-dev": [

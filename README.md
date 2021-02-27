@@ -91,10 +91,11 @@ Agora você pode montar seu template de e-mail html usando BrPlates, basta criar
 ```php
 <?php
 
-$template = $email->template("./theme", "php")->catch("_theme", [
+$template = $email->template("./theme")->renderTemplate("_theme", [
     "title" => "E-mail",
     "company" => "BrBunny"
 ]);
+
 $email->bootstrap(
     "Here is the subject",
     $template
