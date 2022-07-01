@@ -23,28 +23,31 @@ class BrMailer
     private $fail;
     /** @var BrPlates */
     private $template;
+    /** @var mixed  */
+    private $config;
 
-    public function __construct()
+    public function __construct($config = BRMAILER)
     {
-        if (!defined('BRMAILER')) {
-            die('Use of undefined constant BRMAILER - class ' . __CLASS__);
+        if (!$config) {
+            die('Use of undefined config class ' . __CLASS__);
         }
+        
         $this->mail = new PHPMailer(true);
         $this->data = new \stdClass();
         //CONFIGURATION
         $this->mail->isSMTP();
-        $this->SMTPDebug = BRMAILER['options']['smtp_debug'] ?? 0;
-        $this->mail->setLanguage(BRMAILER['options']['language'] ?? "br");
-        $this->mail->isHTML(BRMAILER['options']['is_html'] ?? true);
-        $this->mail->SMTPAuth = BRMAILER['options']['auth'];
-        $this->mail->SMTPSecure = BRMAILER['options']['secure'];
-        $this->mail->CharSet = BRMAILER['options']['charset'] ?? "utf-8";
+        $this->SMTPDebug = $this->config['options']['smtp_debug'] ?? 0;
+        $this->mail->setLanguage($this->config['options']['language'] ?? "br");
+        $this->mail->isHTML($this->config['options']['is_html'] ?? true);
+        $this->mail->SMTPAuth = $this->config['options']['auth'];
+        $this->mail->SMTPSecure = $this->config['options']['secure'];
+        $this->mail->CharSet = $this->config['options']['charset'] ?? "utf-8";
 
         //AUTH
-        $this->mail->Host = BRMAILER['host'];
-        $this->mail->Port = BRMAILER['port'];
-        $this->mail->Username = BRMAILER['user'];
-        $this->mail->Password = BRMAILER['passwd'];
+        $this->mail->Host = $this->config['host'];
+        $this->mail->Port = $this->config['port'];
+        $this->mail->Username = $this->config['user'];
+        $this->mail->Password = $this->config['passwd'];
     }
 
     /**

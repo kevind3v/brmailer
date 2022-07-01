@@ -13,7 +13,7 @@ BrMailer is a component for handling emails using PHPMAILER.
 BrMailer is available through Composer:
 
 ```sh
-"brbunny/brmailer": "1.0.*"
+"brbunny/brmailer": "1.1.*"
 ```
 
 or run
