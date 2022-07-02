@@ -32,6 +32,7 @@ class BrMailer
             die('Use of undefined config class ' . __CLASS__);
         }
         
+        $this->config = $config;
         $this->mail = new PHPMailer(true);
         $this->data = new \stdClass();
         //CONFIGURATION
