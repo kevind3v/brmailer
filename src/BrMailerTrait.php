@@ -105,8 +105,8 @@ trait BrMailerTrait
     public function send(
         string $from = BRMAILER['from']['address'],
         string $fromName = BRMAILER['from']['name'],
-        string $replyTo = BRMAILER['reply']['address'],
-        string $replyToName = BRMAILER['reply']['name']
+        string $replyTo = null,
+        string $replyToName = null
     ): bool {
         try {
             if (
@@ -118,7 +118,10 @@ trait BrMailerTrait
             $this->mail->Subject = (string)$this->data->subject;
             $this->mail->Body = $this->data->body;
 
-            $this->mail->addReplyTo($replyTo, $replyToName);
+            if ($replyTo) {
+                $this->mail->addReplyTo($replyTo, $replyToName);
+            }
+            
             $this->mail->setFrom($from, $fromName);
 
             if (!empty($this->data->address)) {
