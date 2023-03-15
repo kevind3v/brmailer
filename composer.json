@@ -16,12 +16,9 @@
     }
   },
   "require": {
-    "php": "^7.2",
-    "ext-pdo": "*",
-    "phpmailer/phpmailer": "^6.2",
-    "brbunny/brplates": "^1.1"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "3.*"
+    "php": ">=7.2",
+    "ext-pdo": ">=7.2",
+    "phpmailer/phpmailer": "6.*",
+    "brbunny/brplates": "1.*"
   }
 }
