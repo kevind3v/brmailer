@@ -5,6 +5,8 @@ namespace BrBunny\BrMailer;
 use BrBunny\BrPlates\BrPlates;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+use stdClass;
 
 /**
  * BrMailer Class
@@ -15,7 +17,7 @@ class BrMailer
 {
     use BrMailerTrait;
 
-    /** @var \stdClass */
+    /** @var stdClass */
     private $data;
     /** @var PHPMailer */
     private $mail;
@@ -26,7 +28,12 @@ class BrMailer
     /** @var mixed  */
     private $config;
 
-    public function __construct($config = BRMAILER)
+    public $SMTPDebug = 0;
+
+    /**
+     * @param array $config
+     */
+    public function __construct(array $config = BRMAILER)
     {
         if (!$config) {
             die('Use of undefined config class ' . __CLASS__);
@@ -34,10 +41,12 @@ class BrMailer
         
         $this->config = $config;
         $this->mail = new PHPMailer(true);
-        $this->data = new \stdClass();
+        $this->data = new stdClass();
         //CONFIGURATION
         $this->mail->isSMTP();
-        $this->SMTPDebug = $this->config['options']['smtp_debug'] ?? 0;
+        if (isset($this->config['options']['smtp_debug']) && $this->config['options']['smtp_debug'] != SMTP::DEBUG_OFF) {
+            $this->SMTPDebug = $this->config['options']['smtp_debug'];
+        }
         $this->mail->setLanguage($this->config['options']['language'] ?? "br");
         $this->mail->isHTML($this->config['options']['is_html'] ?? true);
         $this->mail->SMTPAuth = $this->config['options']['auth'];
@@ -59,12 +68,7 @@ class BrMailer
         return $this->mail;
     }
 
-    public function getTemplate(): BrPlates
-    {
-        return $this->template;
-    }
-
-    public function data()
+    public function data(): stdClass
     {
         return $this->data;
     }

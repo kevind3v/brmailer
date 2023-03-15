@@ -15,15 +15,15 @@ trait BrMailerTrait
     /**
      * @param string $subject
      * @param string $body
-     * @param string $recipient
-     * @param string $recipientName
+     * @param string|null $recipient
+     * @param string|null $recipientName
      * @return BrMailer
      */
     public function bootstrap(
         string $subject,
         string $body,
-        string $recipient = null,
-        string $recipientName = null
+        ?string $recipient = null,
+        ?string $recipientName = null
     ): BrMailer {
         $this->data->subject = $subject;
         $this->data->body = $body;
@@ -36,6 +36,7 @@ trait BrMailerTrait
     /**
      * @param string $path
      * @param string $ext
+     * @return BrMailer
      */
     public function template(
         string $path,
@@ -48,7 +49,7 @@ trait BrMailerTrait
     /**
      * @param string $theme
      * @param array|null $data
-     * @return BrPlates
+     * @return string
      */
     public function renderTemplate(string $theme, ?array $data = []): string
     {
@@ -57,10 +58,10 @@ trait BrMailerTrait
 
     /**
      * @param string $path
-     * @param string $fileName
+     * @param string|null $fileName
      * @return BrMailer
      */
-    public function attach(string $path, string $fileName = null): BrMailer
+    public function attach(string $path, ?string $fileName = null): BrMailer
     {
         $this->data->attach[$path] = $fileName;
         return $this;
@@ -68,10 +69,10 @@ trait BrMailerTrait
 
     /**
      * @param string $recipient
-     * @param string $recipientName
+     * @param string|null $recipientName
      * @return BrMailer
      */
-    public function addAddress(string $recipient, string $recipientName = null): BrMailer
+    public function addAddress(string $recipient, ?string $recipientName = null): BrMailer
     {
         $this->data->address[$recipient] = $recipientName;
         return $this;
@@ -79,20 +80,20 @@ trait BrMailerTrait
 
     /**
      * @param string $recipient
-     * @param string $recipientName
+     * @param string|null $recipientName
      * @return void
      */
-    public function addCC(string $recipient, string $recipientName = null)
+    public function addCC(string $recipient, ?string $recipientName = null)
     {
         $this->data->cc[$recipient] = $recipientName;
     }
 
     /**
      * @param string $recipient
-     * @param string $recipientName
+     * @param string|null $recipientName
      * @return void
      */
-    public function addBCC(string $recipient, string $recipientName = null)
+    public function addBCC(string $recipient, ?string $recipientName = null)
     {
         $this->data->bcc[$recipient] = $recipientName;
     }
@@ -100,13 +101,15 @@ trait BrMailerTrait
     /**
      * @param string $from
      * @param string $fromName
+     * @param string|null $replyTo
+     * @param string|null $replyToName
      * @return boolean
      */
     public function send(
         string $from = BRMAILER['from']['address'],
         string $fromName = BRMAILER['from']['name'],
-        string $replyTo = null,
-        string $replyToName = null
+        ?string $replyTo = null,
+        ?string $replyToName = null
     ): bool {
         try {
             if (
@@ -151,7 +154,5 @@ trait BrMailerTrait
             $this->fail = $e;
             return false;
         }
-
-        return false;
     }
 }

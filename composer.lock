@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "brbunny/brplates",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kevind3v/brplates.git",
-                "reference": "33816e770ad60cd20e0df24aac9fa37a184fb0cd"
+                "reference": "706d4b080471181232a0567c33d2470c571d1e8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevind3v/brplates/zipball/33816e770ad60cd20e0df24aac9fa37a184fb0cd",
-                "reference": "33816e770ad60cd20e0df24aac9fa37a184fb0cd",
+                "url": "https://api.github.com/repos/kevind3v/brplates/zipball/706d4b080471181232a0567c33d2470c571d1e8b",
+                "reference": "706d4b080471181232a0567c33d2470c571d1e8b",
                 "shasum": ""
             },
             "require": {
@@ -46,9 +46,9 @@
             "description": "BrPlates is a component for handling view layer using Plates",
             "support": {
                 "issues": "https://github.com/kevind3v/brplates/issues",
-                "source": "https://github.com/kevind3v/brplates/tree/v1.2.1"
+                "source": "https://github.com/kevind3v/brplates/tree/v1.2.2"
             },
-            "time": "2023-03-15T19:24:34+00:00"
+            "time": "2023-03-15T23:33:03+00:00"
         },
         {
             "name": "league/plates",
