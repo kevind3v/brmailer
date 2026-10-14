@@ -4,27 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e30ac37cff3ca29092915ec852df2b7",
+    "content-hash": "f781bb12d246de485921ff44506661a8",
     "packages": [
         {
             "name": "brbunny/brplates",
-            "version": "v1.2.2",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kevind3v/brplates.git",
-                "reference": "706d4b080471181232a0567c33d2470c571d1e8b"
+                "reference": "cfc70964b78bfdfbebc66e225da6e2166c10c12b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevind3v/brplates/zipball/706d4b080471181232a0567c33d2470c571d1e8b",
-                "reference": "706d4b080471181232a0567c33d2470c571d1e8b",
+                "url": "https://api.github.com/repos/kevind3v/brplates/zipball/cfc70964b78bfdfbebc66e225da6e2166c10c12b",
+                "reference": "cfc70964b78bfdfbebc66e225da6e2166c10c12b",
                 "shasum": ""
             },
             "require": {
-                "ext-pdo": "*",
-                "league/plates": "3.*",
-                "matthiasmullie/minify": "1.*",
-                "php": ">=7.2"
+                "league/plates": "^3.6",
+                "matthiasmullie/minify": "^1.3.75",
+                "php": "^8.0"
             },
             "type": "library",
             "autoload": {
@@ -46,30 +45,30 @@
             "description": "BrPlates is a component for handling view layer using Plates",
             "support": {
                 "issues": "https://github.com/kevind3v/brplates/issues",
-                "source": "https://github.com/kevind3v/brplates/tree/v1.2.2"
+                "source": "https://github.com/kevind3v/brplates/tree/v1.4.0"
             },
-            "time": "2023-03-15T23:33:03+00:00"
+            "time": "2026-10-14T20:39:06+00:00"
         },
         {
             "name": "league/plates",
-            "version": "v3.5.0",
+            "version": "v3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/plates.git",
-                "reference": "a6a3238e46c6e19af7318fdc36bfbe49b0620231"
+                "reference": "12ee65166adbc6fb5916fb80b0c0758e49a2d996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/plates/zipball/a6a3238e46c6e19af7318fdc36bfbe49b0620231",
-                "reference": "a6a3238e46c6e19af7318fdc36bfbe49b0620231",
+                "url": "https://api.github.com/repos/thephpleague/plates/zipball/12ee65166adbc6fb5916fb80b0c0758e49a2d996",
+                "reference": "12ee65166adbc6fb5916fb80b0c0758e49a2d996",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0|^8.0"
+                "php": "^8.0"
             },
             "require-dev": {
                 "mikey179/vfsstream": "^1.6",
-                "phpunit/phpunit": "^9.5",
+                "phpunit/phpunit": "^11.4",
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
@@ -110,22 +109,22 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/plates/issues",
-                "source": "https://github.com/thephpleague/plates/tree/v3.5.0"
+                "source": "https://github.com/thephpleague/plates/tree/v3.6.0"
             },
-            "time": "2023-01-16T20:25:45+00:00"
+            "time": "2024-11-02T15:03:35+00:00"
         },
         {
             "name": "matthiasmullie/minify",
-            "version": "1.3.70",
+            "version": "1.3.75",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "2807d9f9bece6877577ad44acb5c801bb3ae536b"
+                "reference": "76ba4a5f555fd7bf4aa408af608e991569076671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/2807d9f9bece6877577ad44acb5c801bb3ae536b",
-                "reference": "2807d9f9bece6877577ad44acb5c801bb3ae536b",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/76ba4a5f555fd7bf4aa408af608e991569076671",
+                "reference": "76ba4a5f555fd7bf4aa408af608e991569076671",
                 "shasum": ""
             },
             "require": {
@@ -136,8 +135,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": ">=2.0",
                 "matthiasmullie/scrapbook": ">=1.3",
-                "phpunit/phpunit": ">=4.8",
-                "squizlabs/php_codesniffer": ">=3.0"
+                "phpunit/phpunit": ">=4.8"
             },
             "suggest": {
                 "psr/cache-implementation": "Cache implementation to use with Minify::cache"
@@ -175,7 +173,7 @@
             ],
             "support": {
                 "issues": "https://github.com/matthiasmullie/minify/issues",
-                "source": "https://github.com/matthiasmullie/minify/tree/1.3.70"
+                "source": "https://github.com/matthiasmullie/minify/tree/1.3.75"
             },
             "funding": [
                 {
@@ -183,7 +181,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-09T12:56:44+00:00"
+            "time": "2025-06-25T09:56:19+00:00"
         },
         {
             "name": "matthiasmullie/path-converter",
@@ -240,16 +238,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.8.0",
+            "version": "v7.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "df16b615e371d81fb79e506277faea67a1be18f1"
+                "reference": "1bc1716a507a65e039d4ac9d9adebbbd0d346e15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/df16b615e371d81fb79e506277faea67a1be18f1",
-                "reference": "df16b615e371d81fb79e506277faea67a1be18f1",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/1bc1716a507a65e039d4ac9d9adebbbd0d346e15",
+                "reference": "1bc1716a507a65e039d4ac9d9adebbbd0d346e15",
                 "shasum": ""
             },
             "require": {
@@ -259,16 +257,18 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "doctrine/annotations": "^1.2.6 || ^1.13.3",
                 "php-parallel-lint/php-console-highlighter": "^1.0.0",
                 "php-parallel-lint/php-parallel-lint": "^1.3.2",
-                "phpcompatibility/php-compatibility": "^9.3.5",
-                "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.7.1",
+                "phpcompatibility/php-compatibility": "^10.0.0@dev",
+                "squizlabs/php_codesniffer": "^3.13.5",
                 "yoast/phpunit-polyfills": "^1.0.4"
             },
             "suggest": {
+                "decomplexity/SendOauth2": "Adapter for using XOAUTH2 authentication",
+                "directorytree/imapengine": "For uploading sent messages via IMAP, see gmail example",
+                "ext-imap": "Needed to support advanced email address parsing according to RFC822",
                 "ext-mbstring": "Needed to send email in multibyte encoding charset or decode encoded addresses",
                 "ext-openssl": "Needed for secure SMTP sending and DKIM signing",
                 "greew/oauth2-azure-provider": "Needed for Microsoft Azure XOAUTH2 authentication",
@@ -308,7 +308,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.8.0"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v7.1.1"
             },
             "funding": [
                 {
@@ -316,19 +316,18 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-06T14:43:22+00:00"
+            "time": "2026-05-18T08:06:14+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2",
-        "ext-pdo": ">=7.2"
+        "php": "^8.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
