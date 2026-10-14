@@ -16,9 +16,8 @@
     }
   },
   "require": {
-    "php": ">=7.2",
-    "ext-pdo": ">=7.2",
-    "phpmailer/phpmailer": "6.*",
-    "brbunny/brplates": "1.*"
+    "php": "^8.0",
+    "phpmailer/phpmailer": "^7.1",
+    "brbunny/brplates": "^1.4"
   }
 }

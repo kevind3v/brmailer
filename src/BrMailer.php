@@ -46,8 +46,9 @@ class BrMailer
         $this->mail->isSMTP();
         if (isset($this->config['options']['smtp_debug']) && $this->config['options']['smtp_debug'] != SMTP::DEBUG_OFF) {
             $this->SMTPDebug = $this->config['options']['smtp_debug'];
+            $this->mail->SMTPDebug = $this->SMTPDebug;
         }
-        $this->mail->setLanguage($this->config['options']['language'] ?? "br");
+        PHPMailer::setLanguage($this->config['options']['language'] ?? "br");
         $this->mail->isHTML($this->config['options']['is_html'] ?? true);
         $this->mail->SMTPAuth = $this->config['options']['auth'];
         $this->mail->SMTPSecure = $this->config['options']['secure'];

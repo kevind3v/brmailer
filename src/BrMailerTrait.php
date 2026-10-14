@@ -53,7 +53,7 @@ trait BrMailerTrait
      */
     public function renderTemplate(string $theme, ?array $data = []): string
     {
-        return $this->template->render($theme, $data);
+        return $this->template->render($theme, $data ?? []);
     }
 
     /**
