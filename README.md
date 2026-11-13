@@ -40,6 +40,8 @@ define("BRMAILER", [
    "port" => "587",
    "user" => "user@example.com",
    "passwd" => "secret",
+   "hostname" => "example.com", // Optional: domain used in Message-ID (default: machine name)
+   "xmailer" => "My App", // Optional: X-Mailer header (default: hidden; "" = PHPMailer default with version)
    "from" => [
       "name" => "From Name",
       "address" => "from@example.com"
