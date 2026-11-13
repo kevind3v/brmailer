@@ -122,7 +122,10 @@ trait BrMailerTrait
             $this->mail->Subject = (string)$this->data->subject;
             $this->mail->Body = $this->data->body;
             if ($this->mail->ContentType === PHPMailer::CONTENT_TYPE_TEXT_HTML) {
-                $this->mail->AltBody = $this->mail->html2text($this->data->body);
+                $this->mail->AltBody = $this->mail->html2text(
+                    $this->data->body,
+                    fn(string $html): string => $this->htmlToText($html)
+                );
             }
 
             if ($replyTo === null && !empty($this->config['reply']['address'])) {
@@ -163,5 +166,31 @@ trait BrMailerTrait
             $this->fail = $e;
             return false;
         }
+    }
+
+    /**
+     * Converts HTML to plain text keeping link URLs ("text: URL")
+     * @param string $html
+     * @return string
+     */
+    private function htmlToText(string $html): string
+    {
+        $charset = $this->mail->CharSet;
+        $html = preg_replace('/<(head|title|style|script)[^>]*>.*?<\/\1>/si', '', $html);
+        $html = preg_replace_callback(
+            '/<a\s[^>]*?href\s*=\s*(["\'])(.*?)\1[^>]*>(.*?)<\/a>/si',
+            function (array $m) use ($charset): string {
+                // Entities stay encoded here; the final html_entity_decode handles them once
+                $href = trim($m[2]);
+                $text = trim(strip_tags($m[3]));
+                $plainText = trim(html_entity_decode($text, ENT_QUOTES, $charset));
+                $plainUrl = html_entity_decode($href, ENT_QUOTES, $charset);
+                return ($plainText === '' || $plainText === $plainUrl) ? $href : "{$text}: {$href}";
+            },
+            $html
+        );
+        $text = html_entity_decode(strip_tags($html), ENT_QUOTES, $charset);
+        $text = implode("\n", array_map('trim', preg_split('/\R/u', $text)));
+        return trim(preg_replace('/\n{3,}/', "\n\n", $text));
     }
 }
