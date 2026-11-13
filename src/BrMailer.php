@@ -53,6 +53,12 @@ class BrMailer
         $this->mail->SMTPAuth = $this->config['options']['auth'];
         $this->mail->SMTPSecure = $this->config['options']['secure'];
         $this->mail->CharSet = $this->config['options']['charset'] ?? "utf-8";
+        // X-Mailer header: hidden by default (a single space suppresses it)
+        $this->mail->XMailer = $this->config['xmailer'] ?? " ";
+        // Hostname used in Message-ID / HELO (falls back to the machine name)
+        if (!empty($this->config['hostname'])) {
+            $this->mail->Hostname = $this->config['hostname'];
+        }
 
         //AUTH
         $this->mail->Host = $this->config['host'];

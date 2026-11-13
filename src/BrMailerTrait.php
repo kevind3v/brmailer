@@ -4,6 +4,7 @@ namespace BrBunny\BrMailer;
 
 use BrBunny\BrPlates\BrPlates;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 
 /**
  * Trait Class
@@ -120,9 +121,17 @@ trait BrMailerTrait
 
             $this->mail->Subject = (string)$this->data->subject;
             $this->mail->Body = $this->data->body;
+            if ($this->mail->ContentType === PHPMailer::CONTENT_TYPE_TEXT_HTML) {
+                $this->mail->AltBody = $this->mail->html2text($this->data->body);
+            }
+
+            if ($replyTo === null && !empty($this->config['reply']['address'])) {
+                $replyTo = $this->config['reply']['address'];
+                $replyToName = $replyToName ?? ($this->config['reply']['name'] ?? null);
+            }
 
             if ($replyTo) {
-                $this->mail->addReplyTo($replyTo, $replyToName);
+                $this->mail->addReplyTo($replyTo, $replyToName ?? '');
             }
             
             $this->mail->setFrom($from, $fromName);
